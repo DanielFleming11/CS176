@@ -31,19 +31,21 @@ public class Medals {
 					{ 1, 0, 1 },
 			};
 		
-		System.out.println("Country 	Gold 	Silver 	Bronze 	Total");
-		System.out.println("");
+		System.out.println("   Country 	   Gold     Silver    Bronze    Total");
+		System.out.println("______________________________________________________");
 	
 		for(int i = 0; i < countries.length; i ++) {
-				System.out.println(countries[i]);
+				System.out.printf("%13s",countries[i]);
+				int t = 0;
+				
+				for(int j = 0; j < counts[0].length; j++) {
+					System.out.printf("%10d",counts[i][j]);
+					t = t + counts[i][j];
+				}
+				
+				System.out.printf("%10d", t);
+				System.out.println();
 		}
-		
-		for(int i = 0; i < counts.length; i++) {
-			for(int j = 0; j < counts.length; j++) {
-				System.out.print(counts[i][j]);
-			}
-		}
-		
 	}
 
 }
