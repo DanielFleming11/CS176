@@ -8,7 +8,7 @@ public class BankTester {
 	public static void main(String[] args) throws FileNotFoundException {
 		
 //Try Block
-				try {
+		try {
 					
 //Variables
 		int tranType = 0;
@@ -46,6 +46,8 @@ public class BankTester {
 				amount = Double.parseDouble(fields[d]);
 				
 //Add Object into Array
+//TODO Doesn't enter into array
+				
 				slist[ctr] = new SavingsAccount(accountNumber, accountName, amount);
 				System.out.println("Savings account " + accountNumber + " created for " + accountName + " with opening balance of " + amount);
 				
@@ -71,31 +73,37 @@ public class BankTester {
 				}
 				
 //Find Account in slist
-				for (SavingsAccount account : slist) {
-					acc = account.getAccount();
+				int x;
+				for (x = 0; x < slist.length; x ++) {
+					
+//TODO FIX ERROR
+				//acc = slist[x].getAccount();
 //Deposit
 					if(tranType == '3') {
-						account.deposit(amount);
+						slist[x].deposit(amount);
 						System.out.println("Deposit of " + amount + " to account " + acc);
 					}
 //Withdraw
 					if(tranType == '4') {
-						bal = account.getBalance();
+						
+//TODO FIX ERROR
+						//bal = slist[x].getBalance();
 //Cannot Withdraw
 						if(bal < amount) {
 							System.out.println("Cannot withdraw " + amount + " from account " + acc);
 						}
 //Can Withdraw
 						else {
-							account.withdraw(amount);
+							slist[x].withdraw(amount);
 							System.out.println("Withdrawal of " + amount + " to account " + acc);
 						}
 					}
-					i = i + 4;
 				}
+				 i = i + 4;
 //Get Balance
 				for(SavingsAccount account : slist) {
-					bal = account.getBalance();
+//TODO FIX ERROR 
+					//bal = account.getBalance();
 				}
 //Print Balance
 				System.out.println("Balance for account " + acc + " is " + bal);
